@@ -18,7 +18,7 @@ ejemplo :
  server.listen(3000, '192.168.0.14' || 'localhost', function () {
   console.log('Application worker ' + process.pid + ' started...');
 });
--en la carpeta config se encuentra un archibo llamado config.js en donde tendra que configurar los datos correspondientes al gestor de base de datos asi:
+- en la carpeta config se encuentra un archibo llamado config.js en donde tendra que configurar los datos correspondientes al gestor de base de datos asi:
 ![imagen](https://user-images.githubusercontent.com/30697632/114262318-0657c100-99a5-11eb-894d-38d7b1221753.png)
 - para la inicializacion del servidor ejecutar el comando node server.js
 
