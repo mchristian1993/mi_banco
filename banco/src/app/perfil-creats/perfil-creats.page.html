@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style=" color:#05ACC7;font-family:'Roboto-Bold';font-size:x-large;text-align: center;position: relative;height:fit-content;padding: 0%;">
+      Perfil
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button  (click)="save()" color="primary">
+        <ion-icon name="checkmark" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <form name="editForm" [formGroup]="editForm">
+    <ion-item-group>
+      <ion-item [hidden]="!editForm.id">
+        <ion-label>ID</ion-label>
+        <ion-input type="hidden" id="id" formControlName="id" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipo Identificacion</ion-label>
+        <ion-select formControlName="tipoIdentificacion" name>
+          <ion-select-option value="CEDULA">CEDULA</ion-select-option>
+          <ion-select-option value="TARJETA">TARJETA</ion-select-option>
+          <ion-select-option value="IDENTIDAD">IDENTIDAD</ion-select-option>
+          <ion-select-option value="CEDULA_EXTRANJERIA">CEDULA_EXTRANJERIA</ion-select-option>
+          <ion-select-option value="PASAPORTE">PASAPORTE</ion-select-option>
+          <ion-select-option value="OTRO">OTRO</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Identificacion</ion-label>
+        <ion-input type="number" name="identificacion" formControlName="identificacion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input type="text" name="identificacion" formControlName="nombre_usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" name="edad" formControlName="edad"></ion-input>
+      </ion-item>
+      <ion-item>
+      
+        <ion-label position="floating">Direccion</ion-label>
+        <ion-input type="text" name="direccion" formControlName="direccion"></ion-input>
+      </ion-item>
+
+  
+
+      <ion-item>
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input type="number" name="telefono" formControlName="telefono"></ion-input>
+      </ion-item>
+    </ion-item-group>
+    
+  </form>
+</ion-content>

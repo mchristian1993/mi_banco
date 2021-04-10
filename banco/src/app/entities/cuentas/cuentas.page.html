@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)" value="cuentas">
+      <ion-segment-button value="cuentas">Mis Cuentas</ion-segment-button>
+      <ion-segment-button value="crear">Crear nueva cuenta</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="segmentTab == 'crear'">
+
+    <form name="editForm" [formGroup]="editForm">
+      <ion-item-group>
+        <ion-item [hidden]="!editForm.id">
+          <ion-label>ID</ion-label>
+          <ion-input type="hidden" id="id" formControlName="id" readonly></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Numero de Cuenta</ion-label>
+          <ion-input type="number" name="numerCuenta" formControlName="numerCuenta"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Alias Cuenta</ion-label>
+          <ion-input type="text" name="aliasCuenta" formControlName="aliasCuenta"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Saldo de Cuenta</ion-label>
+          <ion-input type="number" name="saldoCuenta" formControlName="saldoCuenta"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Moneda Cuenta</ion-label>
+          <ion-input type="text" name="monedaCuenta" formControlName="monedaCuenta"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Descripcion Cuenta</ion-label>
+          <ion-input type="text" name="descripcion" formControlName="descripcion"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tipo cuenta</ion-label>
+          <ion-select formControlName="tipocuenta" [compareWith]="compareTipo">
+       <!--      <ion-select-option [value]="null"></ion-select-option> -->
+            <ion-select-option [value]="tipoOption" *ngFor="let tipoOption of tipos; trackBy: trackTipoById">
+              {{tipoOption.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label> Banco</ion-label>
+          <ion-select formControlName="tipoNombreBanco" [compareWith]="compareBanco">
+           <!--  <ion-select-option [value]="null"></ion-select-option> -->
+            <ion-select-option [value]="bancoOption" *ngFor="let bancoOption of bancos; trackBy: trackBancoById">
+              {{bancoOption.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-item-group>
+      <ion-button (click)="save()" color="primary">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-button>
+
+    </form>
+
+  </div>
+  <div *ngIf="segmentTab == 'cuentas'">
+    <hr>
+    <ion-list>
+    
+      <ion-item-sliding *ngFor="let cuenta of cuentas" #slidingItem>
+        <ion-grid (click)="cuentasAsociadas(cuenta.account_number)">
+        <ion-card class="ion-card">
+          <ion-item lines="none">
+            <ion-icon slot="start" src="assets/icon/alarma.svg"></ion-icon>
+            <ion-label text-wrap>
+              <p>Numero de cuenta: {{cuenta.account_number}}</p>
+              <p>Saldo: {{cuenta.saldo}}</p>
+              <p>Moneda de cuenta: {{cuenta.coin}}</p>
+           
+              <hr>
+              <ion-label>
+                <ion-icon src="assets/icon/caminar.svg"></ion-icon>
+                <a> Ver movimientos
+                </a>
+              </ion-label>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-grid>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>

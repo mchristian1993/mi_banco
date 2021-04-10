@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Resumen de transferencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <hr>
+    <ion-list>
+
+      <ion-item-sliding  #slidingItem>
+        <ion-card class="ion-card">
+          <ion-item lines="none">
+            <ion-icon slot="start" src="assets/icon/alarma.svg"></ion-icon>
+            <ion-label text-wrap>
+               <p>Numero de cuenta origen: {{dataTransfer.root_account}}</p>
+               <p>Numero de cuenta destino: {{dataTransfer.destination_account}}</p>
+              <p>Valor: {{dataTransfer.valor}}</p>
+              <hr>
+              <ion-label>
+              </ion-label>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <ion-button style="margin-left: 5%" (click)="createTransfer()" color="primary">
+    Confirmar
+    <ion-icon name="checkmark"></ion-icon>
+  </ion-button>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>
+      <h5>BIENVENIDO</h5>
+    </ion-title>
+    <ion-buttons slot="start">
+      <!-- <ion-button (click)="logout()" id="logout"> -->
+      <ion-button (click)="logout()" id="logout">
+        <!-- {{ 'LOGOUT_TITLE' | translate }} -->
+        <ion-icon slot="start" src="assets/icon/logout.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid (click)="cuentasAsociadas()">
+    <ion-card class="ion-card">
+      <ion-card-header style="padding-top: 0%; padding-bottom: 0%;">
+        <ion-card-title>
+          <br>
+          <ion-icon src="assets/icon/alarma.svg"></ion-icon>
+          <ion-card-subtitle>Cuentas Asociadas</ion-card-subtitle>
+          <br>
+          <a >ver</a>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-grid>
+
+  <ion-grid (click)="  transferencias()">
+    <ion-card class="ion-card">
+      <ion-card-header style="padding-top: 0%; padding-bottom: 0%;">
+        <ion-card-title>
+          <br>
+          <ion-icon src="assets/icon/alarma.svg"></ion-icon>
+          <ion-card-subtitle>Transacciones</ion-card-subtitle>
+          <br>
+          <a >Crear</a>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-grid>
+
+  
+ 

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" style="text-align: center;" style="padding: 15%;">
+  <form (submit)="doLogin()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Correo o nombre de Usuario</ion-label>
+        <ion-input type="string" [(ngModel)]="account.username" name="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input #input type="password" [(ngModel)]="account.password" name="password" style="width: 90%;">
+        </ion-input>
+        <ion-icon item-end class="btn_eye_icon" (click)="showPassword(input)"
+          [name]="(passwordTypeInput === 'text')?'eye-off':'eye'"></ion-icon>
+      </ion-item>
+      <br>
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-button expand="block" type="submit" color="primary" id="login">Ingresar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-list>
+  </form>
+</ion-content>

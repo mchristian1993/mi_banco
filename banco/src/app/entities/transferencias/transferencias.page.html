@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Transferencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+<ion-label style="margin: 5%;">¿Desde dónde quieres transfereir?</ion-label>
+
+<div *ngIf="segmentTab == 'transferencias'">
+  <hr>
+  <ion-list>
+  
+    <ion-item-sliding *ngFor="let cuenta of cuentas" #slidingItem>
+      <ion-grid (click)="transferencias(cuenta.account_number)">
+      <ion-card class="ion-card">
+        <ion-item lines="none">
+          <ion-icon slot="start" src="assets/icon/alarma.svg"></ion-icon>
+          <ion-label text-wrap>
+            <p>Numero de cuenta: {{cuenta.account_number}}</p>
+            <p>Saldo: {{cuenta.saldo}}</p>
+            <p>Nombre de cuenta: {{cuenta.name}}</p>
+         
+            <hr>
+            <ion-label>
+           <!--    <ion-icon src="assets/icon/caminar.svg"></ion-icon> -->
+              <a> Transferir
+              </a>
+            </ion-label>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-grid>
+    </ion-item-sliding>
+  </ion-list>
+</div>
+</ion-content>

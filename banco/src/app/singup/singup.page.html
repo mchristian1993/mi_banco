@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="text-align: center;">
+  <div >
+<!--     <ion-img style="padding: 15%; margin-top: 5px; margin-bottom: 1px;" src="assets/icon/BeCare.png"></ion-img>
+ -->  </div>
+  <form (submit)="doSignup()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="string"  pattern="[a-zA-Z ]*" [(ngModel)]="account.firstName" name="firstName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="string"  pattern="[a-zA-Z ]*" [(ngModel)]="account.lastName" name="lastName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" pattern=".+@.+.com" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password" minlength="6"></ion-input>
+      </ion-item>
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-button expand="block" type="submit" color="primary">Registrarse</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </form>
+</ion-content>

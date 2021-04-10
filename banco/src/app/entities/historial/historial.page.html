@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Movimientos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    
+    <ion-item-sliding *ngFor="let historia of historial" #slidingItem>
+      <ion-grid >
+      <ion-card class="ion-card">
+        <ion-item lines="none">
+          <ion-icon slot="start" src="assets/icon/alarma.svg"></ion-icon>
+          <ion-label text-wrap>
+            <p *ngIf="idCuenta == historia.root_account">Pago-Banca-{{historia.destination_account}}</p>
+            <p *ngIf="idCuenta == historia.destination_account">Deposito-Banca-{{historia.root_account}}</p>
+            <p>Valor: {{historia.amount}}</p>
+            <p>fecha: {{historia.created_at}}</p>
+      
+            <hr>
+       
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-grid>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
