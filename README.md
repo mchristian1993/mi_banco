@@ -23,7 +23,7 @@ ejemplo :
 - para la inicializacion del servidor ejecutar el comando node server.js
 
 # fronted
-Este fue desarrollado en ionic
+Este fue desarrollado en ionic se encuentra alojado en la carpeta banco
 - ejecutar el comando npm install
 - en la carpeta src/eviroment  se encuentra el archivo de configuracion enviroment.ts donde tendra que configurar la ip correspondiente segun el serivor ejemplo
 ![imagen](https://user-images.githubusercontent.com/30697632/114262412-7403ed00-99a5-11eb-8571-b25cc9900ccb.png)
