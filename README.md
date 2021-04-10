@@ -10,7 +10,7 @@ encontrala el script que contiene las tablas de la  base de datos
 
 Este fue realizado con el framework node js
 - ejecutar el comando npm install 
-- Dentro dela carpeta backend encontrara el los achivos necesarios 
+- Dentro dela carpeta backend encontrara  los achivos necesarios 
 - en el archivo server.js en la linea 76 realizar el cambio de la ip  segun su direccion de red ejecutar el comando ipconfig en el cmd
 - ![imagen](https://user-images.githubusercontent.com/30697632/114262262-a06b3980-99a4-11eb-9ab8-bb07b1c28838.png)
 ejemplo :
