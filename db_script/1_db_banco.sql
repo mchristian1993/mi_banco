@@ -1,4 +1,4 @@
-create database  mi_banco;
+
 DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users (
